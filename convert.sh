@@ -32,7 +32,8 @@ for i in $(seq $START 1000 $END); do
 done
 
 mv "$START-$END" ./data/
-rm ./stream.* ./data.txt
+rm ./stream.txt ./data.txt
+mv ./stream.har ./raw/"$START-$END.har"
 
 START_DATE=$(date -d "@$((START / 1000))")
 END_DATE=$(date -d "@$((END / 1000))")

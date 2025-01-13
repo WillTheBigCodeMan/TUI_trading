@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function f() {
+            const e = document.getElementById("text");
+
+            const lines = e.value.split(/\r?\n/)
+            let out = "";
+            for (const l of lines) {
+                console.log(l);
+                if (l.match(/#NQMAR25/) !== null) {
+                    out += l + '\n';
+                }
+            }
+
+            navigator.clipboard.writeText(out);
+            e.value = "";
+        }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .wrapper textarea {
+            width: 50%;
+        }
+
+        .wrapper button {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <textarea id="text">
+        </textarea>
+        <button onclick="f()">
+        </button>
+    </div>
+</body>
+
+</html>
