@@ -8,6 +8,7 @@ END=$(tail -n1 stream.txt | cut -d "|" -f 5 | tr -d '\\"]')
 
 if [[ $START = "" ]]; then
     date >>errors.log
+    rm ./stream*
     exit
 fi
 
