@@ -8,8 +8,9 @@ while :; do
     ydotool mousemove 50 100
     sleep 1
     ydotool mousemove 150 400
+    sleep 1
     ydotool click C0
-    sleep 0.1
+    sleep 1
     ydotool key 29:1 19:1 29:0 19:0 56:1 3:1 56:0 3:0
     ydotool mousemove --absolute 100 100
     ydotool click C0

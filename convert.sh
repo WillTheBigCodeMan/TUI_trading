@@ -6,6 +6,11 @@ START=$(head -n1 stream.txt | cut -d "|" -f 5 | tr -d '\\"]')
 
 END=$(tail -n1 stream.txt | cut -d "|" -f 5 | tr -d '\\"]')
 
+if [[ $START = "" ]]; then
+    date >>errors.log
+    exit
+fi
+
 sed -E 's/.*([0-9]{5}\.[0-9]{2}\|[0-9]{5}\.[0-9|.]*).*/\1/' stream.txt >data.txt
 
 COUNTER=1

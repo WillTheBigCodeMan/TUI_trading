@@ -10,7 +10,7 @@
             let out = "";
             for (const l of lines) {
                 console.log(l);
-                if (l.match(/#NQMAR25/) !== null) {
+                if (l.match(/#NQMAR25/) !== null && l.match(/unfiltered/) == null) {
                     out += l + '\n';
                 }
             }
